@@ -1,4 +1,4 @@
-// File: gui/AgentClientGUI.java
+
 package gui;
 
 import agents.AgentClient;
@@ -16,13 +16,13 @@ public class AgentClientGUI extends JFrame {
     public AgentClientGUI(AgentClient agent) {
         this.agent = agent;
 
-        setTitle("📦 Client - Gestion des demandes");
+        setTitle("Client - Gestion des demandes");
         setSize(500, 350);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // --- BARRE SUPÉRIEURE ---
+        
         JPanel topPanel = new JPanel();
         topPanel.setBackground(new Color(30, 144, 255)); // bleu
         JLabel title = new JLabel("Agent Client");
@@ -31,7 +31,7 @@ public class AgentClientGUI extends JFrame {
         topPanel.add(title);
         add(topPanel, BorderLayout.NORTH);
 
-        // --- ZONE DE LOG ---
+        
         logArea = new JTextArea();
         logArea.setEditable(false);
         logArea.setFont(new Font("Consolas", Font.PLAIN, 13));
@@ -39,8 +39,8 @@ public class AgentClientGUI extends JFrame {
         JScrollPane scrollPane = new JScrollPane(logArea);
         add(scrollPane, BorderLayout.CENTER);
 
-        // --- BOUTON ---
-        sendRequestButton = new JButton("🛒 Envoyer une demande de livraison");
+       
+        sendRequestButton = new JButton(" Envoyer une demande de livraison");
         sendRequestButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
         sendRequestButton.setFocusPainted(false);
         sendRequestButton.setBackground(new Color(0, 153, 76));
@@ -48,7 +48,7 @@ public class AgentClientGUI extends JFrame {
         sendRequestButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         sendRequestButton.addActionListener(this::sendRequest);
 
-        // Hover effect
+       
         sendRequestButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 sendRequestButton.setBackground(new Color(0, 123, 50));
@@ -75,7 +75,7 @@ public class AgentClientGUI extends JFrame {
 
     public void log(String message) {
         SwingUtilities.invokeLater(() -> {
-            logArea.append("🛈 " + message + "\n");
+            logArea.append(message + "\n");
         });
     }
 }

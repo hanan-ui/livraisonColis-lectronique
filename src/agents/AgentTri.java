@@ -1,4 +1,4 @@
-// File: agents/AgentTri.java
+
 package agents;
 
 import jade.core.Agent;
@@ -20,7 +20,7 @@ public class AgentTri extends Agent {
     protected void setup() {
         System.out.println(getLocalName() + " prêt à traiter les demandes.");
 
-        // Enregistrer service au DF
+        
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
 
@@ -36,12 +36,12 @@ public class AgentTri extends Agent {
             fe.printStackTrace();
         }
 
-        // Lancer GUI
+        
         javax.swing.SwingUtilities.invokeLater(() -> {
             gui = new AgentTriGUI(this);
         });
 
-        // Comportement pour recevoir messages
+        
         addBehaviour(new CyclicBehaviour() {
             @Override
             public void action() {

@@ -1,4 +1,4 @@
-// File: gui/AgentTriGUI.java
+
 package gui;
 
 import javax.swing.*;
@@ -13,22 +13,22 @@ public class AgentTriGUI extends JFrame {
     public AgentTriGUI(AgentTri agent) {
         this.agent = agent;
 
-        setTitle("🏷 AgentTri - Centre de tri");
+        setTitle("AgentTri - Centre de tri");
         setSize(500, 350);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // --- Barre supérieure ---
+        
         JPanel topPanel = new JPanel();
-        topPanel.setBackground(new Color(96, 96, 96)); // gris foncé
+        topPanel.setBackground(new Color(96, 96, 96)); 
         JLabel title = new JLabel("Agent de tri");
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Segoe UI", Font.BOLD, 20));
         topPanel.add(title);
         add(topPanel, BorderLayout.NORTH);
 
-        // --- Zone de log ---
+        
         logArea = new JTextArea();
         logArea.setEditable(false);
         logArea.setFont(new Font("Consolas", Font.PLAIN, 13));
@@ -43,7 +43,7 @@ public class AgentTriGUI extends JFrame {
 
     public void log(String message) {
         SwingUtilities.invokeLater(() -> {
-            logArea.append("📩 " + message + "\n");
+            logArea.append( message + "\n");
         });
     }
 }

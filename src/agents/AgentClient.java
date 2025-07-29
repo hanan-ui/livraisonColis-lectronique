@@ -1,4 +1,4 @@
-// File: agents/AgentClient.java
+
 package agents;
 
 import jade.core.Agent;
@@ -18,13 +18,13 @@ public class AgentClient extends Agent {
     protected void setup() {
         System.out.println(getLocalName() + " prêt.");
 
-        // Lancer interface graphique
+        
         javax.swing.SwingUtilities.invokeLater(() -> {
             gui = new AgentClientGUI(this);
         });
     }
 
-    // Méthode appelée par la GUI pour envoyer la demande
+    
     public void sendRequest() {
         new Thread(() -> {
             try {

@@ -1,4 +1,4 @@
-// File: gui/AgentLivreurGUI.java
+
 package gui;
 
 import javax.swing.*;
@@ -17,13 +17,13 @@ public class AgentLivreurGUI extends JFrame {
     public AgentLivreurGUI(AgentLivreur agent) {
         this.agent = agent;
 
-        setTitle("🚚 AgentLivreur - Gestion des livraisons");
+        setTitle(" AgentLivreur - Gestion des livraisons");
         setSize(500, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // --- Barre supérieure ---
+       
         JPanel topPanel = new JPanel();
         topPanel.setBackground(new Color(0, 153, 76));
         JLabel title = new JLabel("Agent Livreur");
@@ -32,7 +32,7 @@ public class AgentLivreurGUI extends JFrame {
         topPanel.add(title);
         add(topPanel, BorderLayout.NORTH);
 
-        // --- Liste des livraisons ---
+       
         deliveryListModel = new DefaultListModel<>();
         deliveryList = new JList<>(deliveryListModel);
         deliveryList.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -41,22 +41,22 @@ public class AgentLivreurGUI extends JFrame {
         deliveryList.setSelectionForeground(Color.WHITE);
         JScrollPane deliveryScrollPane = new JScrollPane(deliveryList);
 
-        // --- Zone de logs ---
+       
         logArea = new JTextArea();
         logArea.setEditable(false);
         logArea.setFont(new Font("Consolas", Font.PLAIN, 13));
         logArea.setBackground(new Color(245, 245, 245));
         JScrollPane logScrollPane = new JScrollPane(logArea);
 
-        // --- Bouton confirmation ---
-        confirmButton = new JButton("✅ Confirmer la livraison");
+      
+        confirmButton = new JButton("Confirmer la livraison");
         confirmButton.setBackground(new Color(0, 153, 76));
         confirmButton.setForeground(Color.WHITE);
         confirmButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
         confirmButton.setFocusPainted(false);
         confirmButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 
-        // Hover effect
+       
         confirmButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 confirmButton.setBackground(new Color(0, 123, 50));
@@ -84,7 +84,7 @@ public class AgentLivreurGUI extends JFrame {
 
     public void log(String message) {
         SwingUtilities.invokeLater(() -> {
-            logArea.append("📦 " + message + "\n");
+            logArea.append(message + "\n");
         });
     }
 

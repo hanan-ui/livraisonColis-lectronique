@@ -1,9 +1,9 @@
-// File: agents/AgentLivreur.java
+
 package agents;
 
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
-import jade.core.AID; // ✅ Import nécessaire
+import jade.core.AID; 
 import jade.lang.acl.ACLMessage;
 import gui.AgentLivreurGUI;
 
@@ -36,12 +36,12 @@ public class AgentLivreur extends Agent {
         });
     }
 
-    // Méthode appelée depuis la GUI pour confirmer livraison
+    
     public void confirmDelivery(String deliveryInfo) {
         ACLMessage confirm = new ACLMessage(ACLMessage.CONFIRM);
         confirm.setOntology("livrerColis");
         confirm.setContent(deliveryInfo);
-        confirm.addReceiver(new AID("AgentTri", AID.ISLOCALNAME)); // ✅ corrigé
+        confirm.addReceiver(new AID("AgentTri", AID.ISLOCALNAME)); 
         send(confirm);
 
         gui.log("CONFIRM envoyé pour : " + deliveryInfo);
